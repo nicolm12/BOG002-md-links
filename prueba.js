@@ -120,36 +120,50 @@ let status_fail = 'fail'
 
 
 function peticionHttp(url) {
+
 return Promise.all( url.map(elemtos => {
 
   // let promesa = new Promise((resolve,reject)=>{
   return axios
     .get(elemtos.href)
     .then(function (respo) {
-      elemtos.code = respo.status;
-      respo.status = status_OK;
+      // elemtos.code = respo.status;
+      // respo.status = status_OK;
 
-      // let objeto=new Object()
-      // objeto.status= elemtos.code;
-      // objeto.mesaje=respo.status;
-      // newArray.push(objeto)
+      // console.log(respo.status)
+      let objeto=new Object()
+      objeto.href= elemtos.href
+      objeto.text= elemtos.text
+      objeto.file= elemtos.file
+      objeto.status= respo.status;
+      objeto.mesaje= status_OK;
+      // elemtos.push(objeto);
 
-      // console.log("dame el objeto",newArray)
+      // console.log("elementos",objeto)
+return objeto
+
     })
     .catch(function (error) {
       if (error.response) {
-        error.response.status = status_fail;
-
+        let objeto=new Object()
+        objeto.href= elemtos.href
+        objeto.text= elemtos.text
+        objeto.file= elemtos.file
+        objeto.status= error.response.status;
+        objeto.mesaje= status_fail;
+       
+return objeto
         //  console.log("error",error.response.status);
       }
 
     })
-.then(console.log(objeto))
+
 })
 )
 
 
 }
+
 
 const nuevaVariable=[  {
   href: 'https://nodejs.org/api/path.html',
@@ -167,7 +181,10 @@ const nuevaVariable=[  {
   file: 'README.md'
 }
 ]
-peticionHttp(nuevaVariable)
+peticionHttp(nuevaVariable).then(respuesta=>{
+  console.log(respuesta)
+
+})
 // const arrayPromesas= nuevaVariable.map(peticionHttp)
 // Promise.all(arrayPromesas).then(console.log)
 
