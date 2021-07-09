@@ -106,7 +106,6 @@ function propiedades(array) {
 
 
     // peticionHttp(newArray)
-    console.log ("probemos",newArray)
 
   })
   return newArray
@@ -145,14 +144,14 @@ return objeto
     })
     .catch(function (error) {
       if (error.response) {
-        let objeto=new Object()
-        objeto.href= elemtos.href
-        objeto.text= elemtos.text
-        objeto.file= elemtos.file
-        objeto.status= error.response.status;
-        objeto.mesaje= status_fail;
+        let objeto2=new Object()
+        objeto2.href= elemtos.href
+        objeto2.text= elemtos.text
+        objeto2.file= elemtos.file
+        objeto2.status= error.response.status;
+        objeto2.mesaje= status_fail;
        
-return objeto
+return objeto2
         //  console.log("error",error.response.status);
       }
 
@@ -176,17 +175,18 @@ const nuevaVariable=[  {
   file: 'README.md'
 },
 {
-  href: 'https://www.youtube.com/watch?v=Lub5qOmY4JQ',
+  href: 'https://www.youtube.com/wath?v=Lub5qOm',
   text: 'recurso',
   file: 'README.md'
 }
 ]
-peticionHttp(nuevaVariable).then(respuesta=>{
-  console.log(respuesta)
+// peticionHttp(nuevaVariable).then(respuesta=>{
+//   console.log(respuesta)
 
-})
-// const arrayPromesas= nuevaVariable.map(peticionHttp)
-// Promise.all(arrayPromesas).then(console.log)
+// })
 
+module.exports={
+searchPath,extraerLinks,propiedades,peticionHttp
+}
 
 
