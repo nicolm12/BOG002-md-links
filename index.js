@@ -10,5 +10,8 @@ function md_Links(ruta, validate){
  const mdLinks = md_Links('../BOG002-md-links-main',true)
  mdLinks.then(console.log)
  
+ module.exports={
+   md_Links
+ }
 
 

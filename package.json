@@ -1,5 +1,28 @@
 {
-  "name": "md-links",
-  "version": "0.1.0"
-  
+  "name": "mdlinks",
+  "description": "description",
+  "authors": "author",
+  "version": "1.0.0",
+  "main": "pathToMain",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "yargs": "^17.0.1"
+  },
+  "bin": {
+    "mdlinks": "./cli.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolm12/BOG002-md-links.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolm12/BOG002-md-links/issues"
+  },
+  "homepage": "https://github.com/nicolm12/BOG002-md-links#readme"
 }
