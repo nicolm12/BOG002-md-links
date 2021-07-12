@@ -1,4 +1,4 @@
-#!/usr/bin/env nod
+#!/usr/bin/env node
 const mdLinks = require("./index.js")
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers')
@@ -9,6 +9,7 @@ const path = args[0];
 
 if(argv.validate || argv.v){
 let bolean= true
+
     mdLinks.md_Links(path,bolean).then(array => {
         array.forEach(object => {
             console.table({
