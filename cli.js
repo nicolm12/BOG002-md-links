@@ -23,15 +23,17 @@ let bolean= true
 })
 }
 else if (argv.stats || argv.s) {
-    mdLinks.md_Links(path).then(array => {
+    return total =mdLinks.md_Links(path).then(array => {
         console.table({total :
-        array.length})
-        
-
+        array.length 
+    });
+        const unique =(validateLinks) => Array.from(new Set(validateLinks.map(link =>link.href)));
+       console.table({unique:unique(array).length})
+    
     })
 }
 else if((argv.stats && argv.validate )|| argv.s &&  argv.v ){
-console.log("si funciona")
+console.log("si funciona")// ponerla al principio porque es como si leyera las lineas anteriores
 }
 else{
     bolean=false
