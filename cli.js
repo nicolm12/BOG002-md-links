@@ -23,7 +23,12 @@ let bolean= true
 })
 }
 else if (argv.stats || argv.s) {
-    console.log("estadisticas")
+    mdLinks.md_Links(path).then(array => {
+        console.table({total :
+        array.length})
+        
+
+    })
 }
 else if((argv.stats && argv.validate )|| argv.s &&  argv.v ){
 console.log("si funciona")

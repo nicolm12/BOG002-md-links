@@ -1,4 +1,4 @@
-const { searchPath, extraerLinks,propiedades,peticionHttp} = require ('./prueba.js')
+const { searchPath, extraerLinks,propiedades,peticionHttp} = require ('./funciones.js')
 
 function md_Links(ruta, validate){
   return searchPath(ruta)
